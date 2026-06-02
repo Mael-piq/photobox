@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>index td8 : fetch</title>
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<main id="photo">
+<h1>Photo : 105</h1>
+
+<section id="la_photo">
+   <img src="">
+    <h4>titre</h4>
+      <p>description</p>
+	  <p>type, defX x defY</p>
+	  <h4 id="la_categorie">categorie : categorie de l'image</h4>
+	  <h4>commentaires : </h4>
+	  <ul id="les_commentaires">
+		  <li>pseudo : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, vitae.</li>
+		  <li>pseudo : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, recusandae.</li>
+	  </ul>
+
+</section>
+</main>
+
+<script id="photoTemplate" type="text/x-handlebars-template">
+    <img src="https://webetu.iutnc.univ-lorraine.fr{{photo.url.href}}">
+    <h4>{{photo.titre}}</h4>
+    <p>{{photo.descr}}</p>
+    <p>{{photo.type}}, {{photo.width}} x {{photo.height}}</p>
+    <h4 id="la_categorie">
+        categorie : ...
+    </h4>
+    <h4>commentaires :</h4>
+    <ul id="les_commentaires">
+    </ul>
+</script>
+
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+<script  src='js/index.js' defer ></script>
+</body>
+</html>
