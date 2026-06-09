@@ -56,7 +56,31 @@
     });
   }
 
+  // ts/gallery.ts
+  function load() {
+    return loadResource(
+      "/www/canals5/phox/api/photos"
+    );
+  }
+
+  // ts/gallery_ui.ts
+  function display_gallery(galerie) {
+    const source = document.querySelector("#galleryTemplate").innerHTML;
+    const template = Handlebars.compile(source);
+    const html = template(galerie);
+    document.querySelector("#les_photos").innerHTML = html;
+  }
+
   // ts/index.ts
+  var boutonload = document.querySelector("#load");
+  boutonload.addEventListener(
+    "click",
+    () => {
+      load().then((galerie) => {
+        display_gallery(galerie);
+      });
+    }
+  );
   function getPicture(id) {
     loadPicture(id).then((data) => {
       displayPicture(data);

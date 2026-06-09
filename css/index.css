@@ -2,3 +2,27 @@ img {
     max-width: 30rem;
     height: auto;
 }
+
+#les_photos{
+    display:flex;
+    flex-wrap:wrap;
+    gap:1rem;
+}
+
+.vignette{
+    width:150px;
+    cursor:pointer;
+}
+
+.vignette img{
+    width:150px;
+    height:auto;
+}
+
+#navigation{
+    margin-bottom:1rem;
+}
+
+#navigation button{
+    margin-right:0.5rem;
+}
