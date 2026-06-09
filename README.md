@@ -1,5 +1,7 @@
 # Photobox
 
+-- Réalisé par PIQUAND Maël --
+
 Application web permettant de parcourir une galerie de photos via une API.
 
 ## Fonctionnalités réalisées
