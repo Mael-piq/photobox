@@ -3,26 +3,29 @@ img {
     height: auto;
 }
 
-#les_photos{
-    display:flex;
-    flex-wrap:wrap;
-    gap:1rem;
+#galerie {
+    margin-bottom: 2rem;
 }
 
-.vignette{
-    width:150px;
-    cursor:pointer;
+#navigation {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
 }
 
-.vignette img{
-    width:150px;
-    height:auto;
+#les_photos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
-#navigation{
-    margin-bottom:1rem;
+.vignette {
+    width: 12rem;
+    cursor: pointer;
 }
 
-#navigation button{
-    margin-right:0.5rem;
+.vignette img {
+    width: 100%;
+    height: auto;
+    display: block;
 }

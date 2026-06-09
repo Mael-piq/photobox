@@ -7,63 +7,59 @@
 </head>
 <body>
 <main id="photo">
-<h1>Photo : 105</h1>
+  <h1>Photo : 105</h1>
 
-<section id="galerie">
+  <section id="galerie">
+      <h2>Galerie</h2>
 
-    <h2>Galerie</h2>
+      <nav id="navigation">
+        <button id="first" type="button">first</button>
+        <button id="prev" type="button">prev</button>
+        <button id="load" type="button">load</button>
+        <button id="next" type="button">next</button>
+        <button id="last" type="button">last</button>
+      </nav>
 
-    <nav id="navigation">
-      <button id="prev">prev</button>
-      <button id="load">load</button>
-      <button id="next">next</button>
-    </nav>
+      <section id="les_photos"></section>
+  </section>
 
-    <section id="les_photos">
-    </section>
-
-</section>
-
-<section id="la_photo">
-   <img src="">
-    <h4>titre</h4>
-      <p>description</p>
-	  <p>type, defX x defY</p>
-	  <h4 id="la_categorie">categorie : categorie de l'image</h4>
-	  <h4>commentaires : </h4>
-	  <ul id="les_commentaires">
-		  <li>pseudo : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, vitae.</li>
-		  <li>pseudo : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, recusandae.</li>
-	  </ul>
-
-</section>
+  <section id="la_photo">
+     <img src="">
+     <h4>titre</h4>
+     <p>description</p>
+     <p>type, defX x defY</p>
+     <h4 id="la_categorie">categorie : categorie de l'image</h4>
+     <p id="categorie_descr"></p>
+     <h4>commentaires :</h4>
+     <ul id="les_commentaires">
+       <li>pseudo : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, vitae.</li>
+       <li>pseudo : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, recusandae.</li>
+     </ul>
+  </section>
 </main>
 
 <script id="photoTemplate" type="text/x-handlebars-template">
-    <img src="https://webetu.iutnc.univ-lorraine.fr{{photo.url.href}}">
-    <h4>{{photo.titre}}</h4>
-    <p>{{photo.descr}}</p>
-    <p>{{photo.type}}, {{photo.width}} x {{photo.height}}</p>
-    <h4 id="la_categorie">
-        categorie : ...
-    </h4>
-    <h4>commentaires :</h4>
-    <ul id="les_commentaires">
-    </ul>
+  <img src="https://webetu.iutnc.univ-lorraine.fr{{photo.url.href}}" alt="{{photo.titre}}">
+  <h4>{{photo.titre}}</h4>
+  <p>{{photo.descr}}</p>
+  <p>{{photo.type}}, {{photo.width}} x {{photo.height}}</p>
+  <h4 id="la_categorie"></h4>
+  <p id="categorie_descr"></p>
+  <h4>commentaires :</h4>
+  <ul id="les_commentaires"></ul>
 </script>
 
 <script id="galleryTemplate" type="text/x-handlebars-template">
 {{#each photos}}
-<div class="vignette" data-photoId="{{photo.id}}">
-
-    <img src="https://webetu.iutnc.univ-lorraine.fr{{photo.thumbnail.href}}" alt="{{photo.titre}}">
-
-</div>
+  <div class="vignette" data-photo-id="{{this.photo.id}}">
+      <img src="https://webetu.iutnc.univ-lorraine.fr{{photo.thumbnail.href}}" alt="{{photo.titre}}">
+      <h4>{{this.photo.titre}}</h4>
+  </div>
 {{/each}}
 </script>
 
 <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
-<script  src='js/index.js' defer ></script>
+<script src="js/index.js" defer></script>
 </body>
 </html>
