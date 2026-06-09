@@ -97,13 +97,18 @@
   }
 
   // ts/gallery_ui.ts
-  function displayGallery(galerie) {
-    console.log(galerie.photos[0]);
+  function displayGallery(galerie, onPhotoClick) {
     const templateElement = document.querySelector("#galleryTemplate");
     const template = Handlebars.compile(templateElement.innerHTML);
     const html = template({ photos: galerie.photos });
     const container = document.querySelector("#les_photos");
     container.innerHTML = html;
+    container.querySelectorAll(".vignette").forEach((vignette) => {
+      vignette.addEventListener("click", () => {
+        const id = Number(vignette.dataset.photoId);
+        onPhotoClick(id);
+      });
+    });
   }
 
   // ts/index.ts
@@ -131,7 +136,7 @@
   }
   function refreshGallery(action) {
     action().then((galerie) => {
-      displayGallery(galerie);
+      displayGallery(galerie, getPicture);
     }).catch(handleError);
   }
   var boutonLoad = document.querySelector("#load");
